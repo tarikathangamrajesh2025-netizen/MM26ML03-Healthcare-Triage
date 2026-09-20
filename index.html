@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Healthcare Triage System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Healthcare Triage Classification</h1>
+
+        <p class="subtitle">
+            Emergency Patient START Triage Prediction
+        </p>
+
+        <form id="triageForm">
+
+            <h2>Patient Information</h2>
+
+            <div class="form-grid">
+
+                <div>
+                    <label>Gender</label>
+                    <select id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Race</label>
+                    <input type="text" id="race" value="">
+                </div>
+
+                <div>
+                    <label>Arrival Transport</label>
+                    <input type="text" id="arrival_transport" value="">
+                </div>
+
+                <div>
+                    <label>Temperature</label>
+                    <input type="number" step="any" id="temperature">
+                </div>
+
+                <div>
+                    <label>Heart Rate</label>
+                    <input type="number" step="any" id="heartrate">
+                </div>
+
+                <div>
+                    <label>Respiratory Rate</label>
+                    <input type="number" step="any" id="resprate">
+                </div>
+
+                <div>
+                    <label>Oxygen Saturation</label>
+                    <input type="number" step="any" id="o2sat">
+                </div>
+
+                <div>
+                    <label>Systolic BP</label>
+                    <input type="number" step="any" id="sbp">
+                </div>
+
+                <div>
+                    <label>Diastolic BP</label>
+                    <input type="number" step="any" id="dbp">
+                </div>
+
+                <div>
+                    <label>Pain Score</label>
+                    <input type="number" step="any" id="pain_score">
+                </div>
+
+                <div>
+                    <label>GCS Eye</label>
+                    <input type="number" step="any" id="gcs_eye">
+                </div>
+
+                <div>
+                    <label>GCS Verbal</label>
+                    <input type="number" step="any" id="gcs_verbal">
+                </div>
+
+                <div>
+                    <label>GCS Motor</label>
+                    <input type="number" step="any" id="gcs_motor">
+                </div>
+
+                <div>
+                    <label>GCS Total</label>
+                    <input type="number" step="any" id="gcs_total">
+                </div>
+
+                <div>
+                    <label>AVPU</label>
+                    <input type="text" id="avpu">
+                </div>
+
+                <div>
+                    <label>AVPU Ordinal</label>
+                    <input type="number" step="any" id="avpu_ordinal">
+                </div>
+
+                <div>
+                    <label>Follows Commands</label>
+                    <input type="number" step="any" id="follows_commands">
+                </div>
+
+                <div>
+                    <label>Consciousness Source</label>
+                    <input type="text" id="consciousness_source">
+                </div>
+
+                <div>
+                    <label>Chief Complaint</label>
+                    <input type="text" id="chiefcomplaint">
+                </div>
+
+            </div>
+
+            <button type="submit">
+                Predict Triage
+            </button>
+
+        </form>
+
+
+        <div id="result" class="result hidden">
+
+            <h2>Prediction Result</h2>
+
+            <div id="prediction"></div>
+
+            <h3>Class Probabilities</h3>
+
+            <div id="probabilities"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
